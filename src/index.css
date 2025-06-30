@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+:root {
+  --white: 255, 255, 255;
+  --mild-gray: 235, 235, 235;
+  --light-gray: 180, 180, 180;
+  --gray: 120, 120, 120;
+  --dark-gray: 80, 80, 80;
+  --darker-gray: 50, 50, 50;
+  --black: 0, 0, 0;
+}
