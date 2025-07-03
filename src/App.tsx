@@ -9,7 +9,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
+          path="/*"
           element={
             <Suspense fallback={<>Loading</>}>
               <CustomerApp />
@@ -17,7 +17,7 @@ const App = () => {
           }
         />
         <Route
-          path="/admin"
+          path="/admin/*"
           element={
             <Suspense fallback={<>Loading</>}>
               <AdminApp />
