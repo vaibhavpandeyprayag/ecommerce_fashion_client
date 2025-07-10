@@ -1,9 +1,13 @@
+import type { FormEvent } from "react";
+
 interface Props {
   id?: string;
   name?: string;
   type?: string;
   placeholder?: string;
   style?: unknown;
+  value: string;
+  onInput: (event: FormEvent<HTMLInputElement>) => void;
 }
 
 const PrimaryInput = (props: Props) => {
@@ -15,6 +19,8 @@ const PrimaryInput = (props: Props) => {
       style={props.style ? props.style : {}}
       type={props.type ? props.type : ""}
       placeholder={props.placeholder ? props.placeholder : "Enter here"}
+      value={props.value}
+      onInput={props.onInput}
     />
   );
 };

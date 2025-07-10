@@ -2,10 +2,13 @@ import { useState } from "react";
 import PrimaryButton from "../components/PrimaryBtn";
 import "./LoginPage.css";
 import PrimaryInput from "../components/PrimaryInput";
+import { useAPICall } from "../api/api";
+import { encrpyt } from "../utility";
 
 const LoginPage = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
+  const { loading, response, error, trigger: login } = useAPICall();
 
   return (
     <div className="login-page">
@@ -36,6 +39,8 @@ const LoginPage = () => {
             name="login_email"
             type="email"
             placeholder="Enter login email"
+            value={email || ""}
+            onInput={e => setEmail(e.currentTarget.value)}
           />
         </div>
         <div className="form-field w-100">
@@ -45,14 +50,24 @@ const LoginPage = () => {
             name="password"
             type="password"
             placeholder="Enter password"
+            value={password || ""}
+            onInput={e => setPassword(e.currentTarget.value)}
           />
         </div>
         <div className="form-field w-100" style={{ marginTop: "2rem" }}>
           <PrimaryButton
             title="Log in"
             tip="Login to the admin account"
-            func={() => {}}
+            func={(e: Event) => {
+              e.preventDefault();
+              const encrytedPass = encrpyt(password as string);
+              login("auth/logIn", "POST", {
+                email: email,
+                password: encrytedPass,
+              });
+            }}
           />
+          {response && <p>Response is logged</p>}
         </div>
       </form>
     </div>
