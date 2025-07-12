@@ -2,15 +2,26 @@ import { Route, Routes } from "react-router";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import SignupPage from "./pages/SignupPage";
+import { Provider } from "react-redux";
+import { store } from "./state/store";
+import { Toaster } from "react-hot-toast";
+import PagesWithHeader from "./components/PagesWithHeader";
 
 const AdminApp = () => {
   return (
-    <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
-    </Routes>
+    <Provider store={store}>
+      <div>
+        <Toaster />
+      </div>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/user/" element={<PagesWithHeader />}>
+          <Route path="dashboard" element={<DashboardPage />} />
+        </Route>
+      </Routes>
+    </Provider>
   );
 };
 

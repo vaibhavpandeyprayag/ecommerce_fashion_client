@@ -14,10 +14,14 @@ const apiConfig: AxiosRequestConfig = {
     Accept: "application/json",
   },
 };
-
+interface Response {
+  msg: string;
+  status_code: number;
+  payload: any;
+}
 interface Call {
   loading: boolean;
-  response: any;
+  response: Response | null;
   error: any;
 }
 

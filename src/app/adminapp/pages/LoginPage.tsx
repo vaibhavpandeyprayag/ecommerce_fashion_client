@@ -1,14 +1,50 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PrimaryButton from "../components/PrimaryBtn";
 import "./LoginPage.css";
 import PrimaryInput from "../components/PrimaryInput";
 import { useAPICall } from "../api/api";
-import { encrpyt } from "../utility";
+import { encrpyt, routes, ToastConfig, type AuthState } from "../utility";
+import { useDispatch, useSelector } from "react-redux";
+import { loggedIn } from "../state/authReducer";
+import { useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
-  const { loading, response, error, trigger: login } = useAPICall();
+  const {
+    loading: loginLoading,
+    response: loginRes,
+    error: loginErr,
+    trigger: login,
+  } = useAPICall();
+  const dispatch = useDispatch();
+  const authState: AuthState = useSelector((state: any) => state.auth);
+  const navigator = useNavigate();
+
+  useEffect(() => {
+    // console.log(authState);
+    if (authState.token != null) navigator("/admin/dashboard");
+  }, []);
+
+  useEffect(() => {
+    // console.log(loginRes);
+    dispatch(
+      loggedIn({
+        user: loginRes?.payload?.user,
+        token: loginRes?.payload?.token,
+      })
+    );
+    if (loginRes && loginRes.status_code == 200) {
+      toast.success(loginRes.msg, ToastConfig);
+      navigator(routes.dashboard);
+    } else if (loginRes && loginRes.status_code != 200) {
+      toast.error(loginRes.msg, ToastConfig);
+    }
+    if (loginErr) {
+      toast.error(loginErr.message, ToastConfig);
+    }
+  }, [loginRes]);
 
   return (
     <div className="login-page">
@@ -67,7 +103,6 @@ const LoginPage = () => {
               });
             }}
           />
-          {response && <p>Response is logged</p>}
         </div>
       </form>
     </div>
