@@ -15,7 +15,7 @@ export const encrpyt = (data: string) => {
   return cryptojs.AES.encrypt(data, import.meta.env.VITE_SECRET_KEY).toString();
 };
 
-export const routing = {
+export const routes = {
   signup: "/admin/signup",
   login: "/admin/login",
   dashboard: "/admin/user/dashboard",
