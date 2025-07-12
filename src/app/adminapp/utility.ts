@@ -9,6 +9,7 @@ export interface AuthState {
 export const ToastConfig: ToastOptions = {
   duration: 3000,
   position: "top-right",
+  style: { fontSize: "1.5rem" },
 };
 
 export const encrpyt = (data: string) => {

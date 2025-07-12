@@ -54,6 +54,7 @@ const LoginPage = () => {
           style={{
             textAlign: "center",
             width: "100%",
+            fontSize: "4rem",
           }}
         >
           FASHION
@@ -61,9 +62,10 @@ const LoginPage = () => {
         <h3
           style={{
             fontWeight: 500,
-            marginBottom: "1rem",
+            marginBottom: "2rem",
             textAlign: "center",
             width: "100%",
+            fontSize: "2rem",
           }}
         >
           Admin Login

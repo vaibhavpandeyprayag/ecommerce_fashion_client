@@ -3,12 +3,13 @@
   justify-content: center;
   align-items: center;
   gap: 4px;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.6rem 1rem 0.8rem 1rem;
   color: rgb(var(--white));
   background-color: rgb(var(--black));
   border-radius: 4px;
   border: 0.5px solid rgb(var(--darker-gray));
   cursor: pointer;
+  letter-spacing: 0.1rem;
 }
 
 .btn:hover {
