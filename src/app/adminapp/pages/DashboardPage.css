@@ -10,6 +10,7 @@
 @media (max-width: 768px) {
   .dashboard-page {
     min-height: auto;
+    padding: 1rem;
   }
 }
 @media (max-width: 480px) {

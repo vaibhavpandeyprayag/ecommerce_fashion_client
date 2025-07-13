@@ -7,6 +7,7 @@ import { store } from "./state/store";
 import { Toaster } from "react-hot-toast";
 import PagesWithMenus from "./components/PagesWithMenus";
 import ProductsPage from "./pages/ProductsPage";
+import "./AdminApp.css";
 
 const AdminApp = () => {
   return (

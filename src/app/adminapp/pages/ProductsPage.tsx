@@ -16,7 +16,7 @@ const ProductsPage = () => {
           height: "5rem",
         }}
       >
-        <h1>Products</h1>
+        <h1 className="page-title">Products</h1>
         {mode == "view" && (
           <section>
             <RoundButton
