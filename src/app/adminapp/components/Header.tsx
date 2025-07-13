@@ -1,5 +1,4 @@
 import "./Header.css";
-import { CgMenuGridO } from "react-icons/cg";
 import PrimaryButton from "./PrimaryBtn";
 import { useDispatch, useSelector } from "react-redux";
 import { routes, ToastConfig, type AuthState } from "../utility";
@@ -75,9 +74,6 @@ const Header = () => {
         <h2 style={{ color: "rgb(var(--gray))" }}>Admin</h2>
       </section>
       <section>
-        {/* <button className="icon-button">
-          <CgMenuGridO className="icon-button-icon" />
-        </button> */}
         <PrimaryButton
           type="primary"
           title="Log out"

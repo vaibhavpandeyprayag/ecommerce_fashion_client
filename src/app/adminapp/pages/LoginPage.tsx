@@ -13,7 +13,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
   const {
-    loading: loginLoading,
+    loading: _loginLoading, // _ is for eslint to ignore eslint/no-unused-vars
     response: loginRes,
     error: loginErr,
     trigger: login,

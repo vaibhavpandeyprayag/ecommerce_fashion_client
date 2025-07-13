@@ -43,6 +43,7 @@ const SignupPage = () => {
           </div>
           <div className="form-field w-100" style={{ marginTop: "2rem" }}>
             <PrimaryButton
+              type="primary"
               title="Log in"
               tip="Login to the admin account"
               func={() => {}}
