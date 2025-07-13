@@ -2,7 +2,7 @@ import "./PrimaryBtn.css";
 
 interface Props {
   title: string;
-  type: "primary" | "outline" | "success" | "danger";
+  type: "primary" | "outline" | "success" | "danger" | "info";
   icon?: string;
   tip?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,0 +1,16 @@
+.products-page {
+  width: 100%;
+  min-height: calc(100vh - 56px);
+
+  padding: 5rem;
+}
+
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+  .products-page {
+    min-height: auto;
+  }
+}
+@media (max-width: 480px) {
+}

@@ -4,6 +4,7 @@ import "./PagesWithMenus.css";
 import { useEffect } from "react";
 const PagesWithMenus = () => {
   const location = useLocation();
+  const navigator = useNavigate();
 
   useEffect(() => {
     console.log(location.pathname);
@@ -23,12 +24,22 @@ const PagesWithMenus = () => {
                     ? " active-item "
                     : "")
                 }
+                onClick={() => navigator("/admin/user/dashboard")}
               >
                 Dashboard
               </a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="menu-item">
+              <a
+                href="javascript:void(0)"
+                className={
+                  `menu-item` +
+                  (location.pathname == "/admin/user/products"
+                    ? " active-item "
+                    : "")
+                }
+                onClick={() => navigator("/admin/user/products")}
+              >
                 Products
               </a>
             </li>

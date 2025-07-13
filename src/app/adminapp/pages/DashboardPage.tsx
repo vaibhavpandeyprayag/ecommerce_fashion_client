@@ -1,9 +1,9 @@
 import "./DashboardPage.css";
 const DashboardPage = () => {
   return (
-    <div className="dashboard-page">
+    <main className="dashboard-page">
       <h1>Dashboard</h1>
-    </div>
+    </main>
   );
 };
 

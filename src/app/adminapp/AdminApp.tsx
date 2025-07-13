@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { store } from "./state/store";
 import { Toaster } from "react-hot-toast";
 import PagesWithMenus from "./components/PagesWithMenus";
+import ProductsPage from "./pages/ProductsPage";
 
 const AdminApp = () => {
   return (
@@ -19,6 +20,7 @@ const AdminApp = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/user/" element={<PagesWithMenus />}>
           <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="products" element={<ProductsPage />} />
         </Route>
       </Routes>
     </Provider>

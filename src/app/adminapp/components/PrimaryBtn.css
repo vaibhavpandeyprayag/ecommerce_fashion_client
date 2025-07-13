@@ -31,3 +31,36 @@
   background-color: rgb(var(--mild-gray));
   border: 0.5px solid rgb(var(--mild-gray));
 }
+
+.outline {
+  color: rgb(var(--black));
+  background-color: rgb(var(--apparent-gray));
+  border: 0.5px solid rgb(var(--mild-gray));
+}
+
+.outline:hover {
+  background-color: rgb(var(--mild-gray));
+  border: 0.5px solid rgb(var(--mild-gray));
+}
+
+.success {
+  color: rgb(var(--white));
+  background-color: rgb(var(--success));
+  border: 0.5px solid rgb(var(--dark-success));
+}
+
+.success:hover {
+  background-color: rgb(var(--dark-success));
+  border: 0.5px solid rgb(var(--dark-success));
+}
+
+.info {
+  color: rgb(var(--info));
+  background-color: rgb(var(--apparent-gray));
+  border: 0.5px solid rgb(var(--info));
+}
+
+.info:hover {
+  background-color: rgb(var(--mild-gray));
+  border: 0.5px solid rgb(var(--info));
+}

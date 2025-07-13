@@ -1,0 +1,30 @@
+.round-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.primary {
+  color: rgb(var(--white));
+  background-color: rgb(var(--darker-gray));
+  border: 0.5px solid rgb(var(--black));
+}
+
+.primary:hover {
+  background-color: rgb(var(--black));
+  border: 0.5px solid rgb(var(--black));
+}
+
+.outline {
+  color: rgb(var(--black));
+  background-color: rgb(var(--apparent-gray));
+  border: 0.5px solid rgb(var(--mild-gray));
+}
+
+.outline:hover {
+  background-color: rgb(var(--mild-gray));
+  border: 0.5px solid rgb(var(--mild-gray));
+}
