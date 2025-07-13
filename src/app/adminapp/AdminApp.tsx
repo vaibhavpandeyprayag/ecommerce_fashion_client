@@ -5,7 +5,7 @@ import SignupPage from "./pages/SignupPage";
 import { Provider } from "react-redux";
 import { store } from "./state/store";
 import { Toaster } from "react-hot-toast";
-import PagesWithHeader from "./components/PagesWithHeader";
+import PagesWithMenus from "./components/PagesWithMenus";
 
 const AdminApp = () => {
   return (
@@ -17,7 +17,7 @@ const AdminApp = () => {
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/user/" element={<PagesWithHeader />}>
+        <Route path="/user/" element={<PagesWithMenus />}>
           <Route path="dashboard" element={<DashboardPage />} />
         </Route>
       </Routes>

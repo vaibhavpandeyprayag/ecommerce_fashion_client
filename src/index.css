@@ -8,7 +8,8 @@
 
 :root {
   --white: 255, 255, 255;
-  --mild-gray: 235, 235, 235;
+  --apparent-gray: 245, 245, 245;
+  --mild-gray: 225, 225, 225;
   --light-gray: 180, 180, 180;
   --gray: 120, 120, 120;
   --dark-gray: 80, 80, 80;
@@ -24,4 +25,19 @@
 
 .w-100 {
   width: 100%;
+}
+
+.modal-header {
+  padding: 1rem 1rem 2rem 1rem;
+  border-bottom: 1px solid rgb(var(--mild-gray));
+}
+
+.modal-header > h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.modal-footer {
+  padding: 2rem 1rem 1rem 1rem;
+  border-top: 1px solid rgb(var(--mild-gray));
 }

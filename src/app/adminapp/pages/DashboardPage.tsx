@@ -1,6 +1,7 @@
+import "./DashboardPage.css";
 const DashboardPage = () => {
   return (
-    <div>
+    <div className="dashboard-page">
       <h1>Dashboard</h1>
     </div>
   );

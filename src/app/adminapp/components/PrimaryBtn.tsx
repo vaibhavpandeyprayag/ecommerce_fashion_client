@@ -2,6 +2,7 @@ import "./PrimaryBtn.css";
 
 interface Props {
   title: string;
+  type: "primary" | "outline" | "success" | "danger";
   icon?: string;
   tip?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -9,7 +10,7 @@ interface Props {
 }
 const PrimaryButton = (props: Props) => {
   return (
-    <button className="btn" onClick={props.func}>
+    <button className={"btn " + props.type} onClick={props.func}>
       {props.icon && <i className={props.icon}></i>}
       {props.title}
     </button>
