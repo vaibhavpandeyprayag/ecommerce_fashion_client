@@ -10,7 +10,7 @@ const ProductsPage = () => {
   const [mode, setMode] = useState<"view" | "add" | "edit">("view");
   const [productName, setProductName] = useState<string>("");
   const [categoryId, setCategoryId] = useState<number | null>(null);
-  const [subcategoryId, setSubcategoryId] = useState<number | null>(null);
+  const [_subcategoryId, _setSubcategoryId] = useState<number | null>(null);
   return (
     <main className="products-page">
       <div
