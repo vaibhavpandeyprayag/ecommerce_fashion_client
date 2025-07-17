@@ -23,24 +23,13 @@
 
 .outline {
   color: rgb(var(--black));
-  background-color: rgb(var(--apparent-gray));
-  border: 0.5px solid rgb(var(--mild-gray));
+  background-color: rgb(var(--mild-gray));
+  border: 0.5px solid rgb(var(--light-gray));
 }
 
 .outline:hover {
-  background-color: rgb(var(--mild-gray));
-  border: 0.5px solid rgb(var(--mild-gray));
-}
-
-.outline {
-  color: rgb(var(--black));
-  background-color: rgb(var(--apparent-gray));
-  border: 0.5px solid rgb(var(--mild-gray));
-}
-
-.outline:hover {
-  background-color: rgb(var(--mild-gray));
-  border: 0.5px solid rgb(var(--mild-gray));
+  background-color: rgb(var(--light-gray));
+  border: 0.5px solid rgb(var(--light-gray));
 }
 
 .success {

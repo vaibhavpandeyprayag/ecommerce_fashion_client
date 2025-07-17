@@ -1,7 +1,13 @@
 .form-input {
   display: block;
   padding: 8px;
+  height: 3.8rem;
   border-radius: 4px;
-  border: 0.5px solid rgb(var(--light-gray));
+  border: 1px solid rgb(var(--gray));
   outline: none;
+}
+
+.form-input:focus {
+  border: 1px solid rgb(var(--black));
+  box-shadow: 0px 0px 2px rgb(var(--black), 0.5);
 }

@@ -2,10 +2,27 @@ import { Outlet, useLocation, useNavigate } from "react-router";
 import Header from "./Header";
 import "./PagesWithMenus.css";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { decrypt, routes, ToastConfig, type AuthState } from "../utility";
+import toast from "react-hot-toast";
 const PagesWithMenus = () => {
   const location = useLocation();
   const navigator = useNavigate();
+  const auth: AuthState = useSelector((state: any) => state.auth);
 
+  useEffect(() => {
+    if (auth.user == null || auth.token == null) {
+      const user = localStorage.getItem("fashion-user");
+      const token = localStorage.getItem("fashion-token");
+      debugger;
+      const decryptedUser = user != null ? JSON.parse(decrypt(user)) : null;
+      const decryptedToken = token != null ? decrypt(token) : null;
+      if (decryptedUser == null || decryptedToken == null) {
+        navigator(routes.login);
+        toast.error("Session Expired", ToastConfig);
+      }
+    }
+  }, [auth]);
   useEffect(() => {
     console.log(location.pathname);
   }, [location]);

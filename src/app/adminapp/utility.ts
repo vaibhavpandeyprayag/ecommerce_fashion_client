@@ -12,12 +12,19 @@ export const ToastConfig: ToastOptions = {
   style: { fontSize: "1.5rem" },
 };
 
-export const encrpyt = (data: string) => {
+export const encrypt = (data: string) => {
   return cryptojs.AES.encrypt(data, import.meta.env.VITE_SECRET_KEY).toString();
+};
+
+export const decrypt = (data: any) => {
+  return cryptojs.AES.decrypt(data, import.meta.env.VITE_SECRET_KEY).toString(
+    cryptojs.enc.Utf8
+  );
 };
 
 export const routes = {
   signup: "/admin/signup",
   login: "/admin/login",
   dashboard: "/admin/user/dashboard",
+  products: "/admin/user/products",
 };

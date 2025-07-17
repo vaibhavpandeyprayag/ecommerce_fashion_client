@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { AuthState } from "../utility";
+import { encrypt, type AuthState } from "../utility";
 
 const initialState: AuthState = {
   user: null,
@@ -10,6 +10,11 @@ const authSlice = createSlice({
   initialState: initialState,
   reducers: {
     loggedIn: (state, action) => {
+      localStorage.setItem(
+        "fashion-user",
+        encrypt(JSON.stringify(action.payload.user))
+      );
+      localStorage.setItem("fashion-token", encrypt(action.payload.token));
       state.user = action.payload.user;
       state.token = action.payload.token;
     },

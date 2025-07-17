@@ -1,7 +1,7 @@
 import "./Header.css";
 import PrimaryButton from "./PrimaryBtn";
 import { useDispatch, useSelector } from "react-redux";
-import { routes, ToastConfig, type AuthState } from "../utility";
+import { decrypt, routes, ToastConfig, type AuthState } from "../utility";
 import { loggedOut } from "../state/authReducer";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
@@ -15,9 +15,15 @@ const Header = () => {
   const [logoutVerifyShow, setLogoutVerifyShow] = useState(false);
 
   useEffect(() => {
-    if (auth.token == null) {
-      navigator(routes.login);
-      toast.success("Logout Successful", ToastConfig);
+    if (auth.user == null || auth.token == null) {
+      const user = localStorage.getItem("fashion-user");
+      const token = localStorage.getItem("fashion-token");
+      const decryptedUser = user != null ? JSON.parse(decrypt(user)) : null;
+      const decryptedToken = token != null ? decrypt(token) : null;
+      if (decryptedUser == null || decryptedToken == null) {
+        navigator(routes.login);
+        toast.error("Session Expired", ToastConfig);
+      }
     }
   }, [auth]);
   return (

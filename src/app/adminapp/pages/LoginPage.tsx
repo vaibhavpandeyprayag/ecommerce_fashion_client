@@ -3,7 +3,7 @@ import PrimaryButton from "../components/PrimaryBtn";
 import "./LoginPage.css";
 import PrimaryInput from "../components/PrimaryInput";
 import { useAPICall } from "../api/api";
-import { encrpyt, routes, ToastConfig, type AuthState } from "../utility";
+import { encrypt, routes, ToastConfig, type AuthState } from "../utility";
 import { useDispatch, useSelector } from "react-redux";
 import { loggedIn } from "../state/authReducer";
 import { useNavigate } from "react-router";
@@ -24,7 +24,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     // console.log(authState);
-    if (authState.token != null) navigator("/admin/dashboard");
+    if (authState.token != null) navigator(routes.dashboard);
   }, []);
 
   useEffect(() => {
@@ -99,7 +99,7 @@ const LoginPage = () => {
             tip="Login to the admin account"
             func={(e: Event) => {
               e.preventDefault();
-              const encrytedPass = encrpyt(password as string);
+              const encrytedPass = encrypt(password as string);
               login("auth/logIn", "POST", {
                 email: email,
                 password: encrytedPass,

@@ -1,4 +1,5 @@
 import type { FormEvent } from "react";
+import "./PrimaryInput.css";
 
 interface Props {
   id?: string;
